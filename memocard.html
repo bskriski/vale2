@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Card Game Jepang</title>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #1c1b22;
+        color: #f5f5f5;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #ff4d6d;
+        margin-top: 60px;
+    }
+
+    .game-board {
+        width: 480px;
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .card {
+        width: 100px;
+        height: 100px;
+        background-color: #2e2e38;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .card.flipped {
+        background-color: #444054;
+        transform: rotateY(180deg);
+    }
+
+    .matched {
+        background-color: #2b9348;
+        cursor: default;
+    }
+
+    #resetBtn {
+        margin-top: 25px;
+        padding: 10px 20px;
+        border: none;
+        background-color: #ff4d6d;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    #resetBtn:hover {
+        background-color: #d6336c;
+    }
+
+    /* Tombol kembali di pojok kanan atas */
+    .back-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+        background-color: #ff4d6d;
+    }
+</style>
+</head>
+<body>
+    <!-- Tombol kembali -->
+    <button class="back-btn" onclick="goBack()">← Kembali</button>
+
+    <h1>🎴 Memory Card - Budaya Jepang 🎌</h1>
+    <p>Temukan pasangan gambar yang sama!</p>
+
+    <div class="game-board" id="gameBoard"></div>
+
+    <button id="resetBtn">Ulangi Permainan</button>
+
+<script>
+const icons = ["🍣", "🎎", "🎋", "🗻", "🌸", "🏯", "🧧", "🥋"];
+let cards = [...icons, ...icons];
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function createBoard() {
+  const board = document.getElementById("gameBoard");
+  board.innerHTML = "";
+  shuffle(cards).forEach(icon => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.dataset.icon = icon;
+    card.innerHTML = "❓";
+    card.addEventListener("click", flipCard);
+    board.appendChild(card);
+  });
+}
+
+function flipCard() {
+  if (lockBoard || this.classList.contains("flipped")) return;
+
+  this.classList.add("flipped");
+  this.innerHTML = this.dataset.icon;
+
+  if (!firstCard) {
+    firstCard = this;
+    return;
+  }
+
+  secondCard = this;
+  checkMatch();
+}
+
+function checkMatch() {
+  lockBoard = true;
+  if (firstCard.dataset.icon === secondCard.dataset.icon) {
+    firstCard.classList.add("matched");
+    secondCard.classList.add("matched");
+    resetTurn();
+  } else {
+    setTimeout(() => {
+      firstCard.classList.remove("flipped");
+      secondCard.classList.remove("flipped");
+      firstCard.innerHTML = "❓";
+      secondCard.innerHTML = "❓";
+      resetTurn();
+    }, 800);
+  }
+}
+
+function resetTurn() {
+  [firstCard, secondCard, lockBoard] = [null, null, false];
+}
+
+function goBack() {
+  window.history.back(); // kembali ke halaman sebelumnya
+}
+
+document.getElementById("resetBtn").addEventListener("click", createBoard);
+createBoard();
+</script>
+</body>
+</html>

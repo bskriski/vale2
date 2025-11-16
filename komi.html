@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Komi Can't Communicate</title>
+<link rel="stylesheet" href="buat sendiri 1.CSS">
+<style>
+  :root {
+    /* warna default (mode terang) */
+    --bg-color: #f9f9ff;
+    --text-color: #222;
+    --card-bg: white;
+    --accent: #0077ff;
+  }
+
+  body.dark {
+    /* warna untuk mode gelap */
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --accent: #4dabff;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background 0.4s, color 0.4s;
+  }
+
+  header {
+    background-color: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .mode-toggle {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 2px solid var(--accent);
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .mode-toggle:hover {
+    background: var(--accent);
+    color: white;
+  }
+
+  .wibu {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px;
+  }
+
+  /* === SLIDER FOTO TANPA EFEK === */
+  .poster {
+    max-width: 350px;
+    overflow-x: auto;
+    display: flex;
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--bg-color);
+    padding-bottom: 5px;
+    -webkit-overflow-scrolling: touch; /* biar geser halus di HP */
+  }
+
+  .poster::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .poster::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+  }
+
+  .poster img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    user-select: none;
+    pointer-events: none; /* hilangkan efek klik */
+    -webkit-user-drag: none; /* cegah drag gambar */
+    transition: none; /* hilangkan animasi hover */
+  }
+
+  .poster img:hover,
+  .poster img:active,
+  .poster img:focus {
+    transform: none;
+    outline: none;
+  }
+
+  .sinopsis {
+    flex: 1 1 400px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    line-height: 1.7;
+    transition: background 0.4s;
+    display: grid;
+    grid-template-columns: 4fr;
+  }
+
+  footer {
+    background-color: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>🎬 Komi-san wa, Komyushou desu (古見さんは、コミュ症です。)
+ <nav>
+    <a href="index.html">|Beranda</a>
+    <a href="animelist.html">|Anime List</a>
+    <a href="bahasa.html">|Bahasa</a>
+    <a href="minigames.html">|Minigames</a>
+</nav>
+</header>
+
+<button class="mode-toggle" onclick="toggleMode()">🌗 Ganti Mode</button>
+
+<div class="wibu">
+  <div class="poster">
+    <img src="assets/s1 komi.jpg" alt="Poster 1">
+    <img src="assets/komis2.jpg" alt="Poster 2">
+  </div>
+
+  <div class="sinopsis">
+    <h2>Sinopsis</h2>
+    <ul><p>
+     <li>🎬 Judul: Komi-san wa, Komyushou desu (古見さんは、コミュ症です。)</li>
+     <li>🎭 Genre: Slice of Life, Komedi, Sekolah, Romance</li>
+     <li>📺 Jumlah Episode: 24 (Season 1–2)</li>
+     <li>🧑‍🎓 Studio: OLM</li>
+    </p></ul>
+    <p><strong>Shouko Komi</strong> adalah gadis paling populer di SMA Itan. Dengan rambut hitam panjang, tatapan anggun, dan kepribadian misterius, semua orang menganggapnya sempurna — bagaikan dewi di sekolah. Namun di balik pesonanya, Komi menyimpan rahasia besar: ia menderita gangguan komunikasi ekstrem. Ia tidak bisa berbicara dengan lancar dan selalu gugup saat mencoba berbicara dengan orang lain. Suatu hari, seorang siswa biasa bernama <strong>Hitohito Tadano</strong> secara tak sengaja mengetahui rahasia Komi. Alih-alih menjauh, Tadano bertekad membantu Komi mencapai impiannya — memiliki 100 teman. Dengan kesabaran, empati, dan humor ringan, mereka memulai perjalanan sosial penuh kehangatan dan tawa di sekolah yang dipenuhi karakter unik. Anime ini bukan hanya tentang persahabatan, tapi juga tentang keberanian menghadapi ketakutan diri sendiri, tentang bagaimana komunikasi sejati kadang tidak memerlukan kata-kata.</p>
+    <p>💬 Pesan & Tema:
+        <ul>
+            <li>Setiap orang punya perjuangannya sendiri yang tak selalu terlihat dari luar.</li>
+            <li>Persahabatan dan penerimaan diri bisa dimulai dari satu orang yang mau memahami.</li>
+            <li>Komedi ringan dikemas dengan momen emosional yang manis, membuat anime ini terasa hangat dan menenangkan.</li>
+        </ul>
+    </p>
+  </div>
+</div>
+
+<footer>© 2025 Anime Showcase | Desain oleh Arfa</footer>
+
+<script>
+  function toggleMode() {
+    document.body.classList.toggle("dark");
+  }
+</script>
+
+</body>
+</html>

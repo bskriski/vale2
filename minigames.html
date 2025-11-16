@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis & Games</title>
+    <link rel="stylesheet" href="buat sendiri 1.CSS">
+    </head>
+<body>
+    <header class="macam">
+     <h1 style="text-align: center;">Minigames</h1>
+     <nav>
+     <a style="text-align: left;" href="index.html">|Beranda</a>
+     <a style="text-align: left;" href="animelist.html">|Anime List</a>
+     <a style="text-align: left;" href="bahasa.html">|Bahasa</a>
+     <a style="text-align: left;" href="minigames.html">|Minigames</a>
+     </nav>
+    </header>
+    <style>
+        .pertanyaan {
+          display: none;
+        }
+      
+        button.toggle {
+          background-color: #007bff;
+          color: white;
+          border: none;
+          padding: 5px 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-top: 5px;
+        }
+      
+        button.toggle:hover {
+          background-color: #0056b3;
+        }
+      
+        button.kirim {
+          background-color: green;
+          color: white;
+          border: none;
+          padding: 8px 15px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+      
+        button.kirim:hover {
+          background-color: darkgreen;
+        }
+      </style>
+      
+</head>
+<body>
+    <nav class="minigames">
+        <section>
+            <h2>Kuis Sederhana tentang Jepang</h2>
+            <ol>
+
+                <li class="soal">Apa nama pakaian adat yang ada di Jepang?
+                    <button class="toggle" onclick="toggleSoal(this)">Lihat Soal</button>
+                    <div class="pertanyaan">              
+                <form id="kuis1">
+                  <label><input type="radio" name="q1" value="Batik"> Batik</label><br>
+                  <label><input type="radio" name="q1" value="Hanbok"> Hanbok</label><br>
+                  <label><input type="radio" name="q1" value="Kimono"> Kimono</label><br>
+                  <label><input type="radio" name="q1" value="Sari"> Sari</label>
+                </form>
+              
+                <li class="soal">Apa mata uang resmi Jepang?
+                    <button class="toggle" onclick="toggleSoal(this)">Lihat Soal</button>
+                    <div class="pertanyaan">              
+                <form id="kuis2">
+                  <label><input type="radio" name="q2" value="Yuan"> Yuan</label><br>
+                  <label><input type="radio" name="q2" value="Won"> Won</label><br>
+                  <label><input type="radio" name="q2" value="Yen"> Yen</label><br>
+                  <label><input type="radio" name="q2" value="Baht"> Baht</label>
+                </form>
+              
+                <li class="soal">Ibu kota negara Jepang adalah...
+                    <button class="toggle" onclick="toggleSoal(this)">Lihat Soal</button>
+                    <div class="pertanyaan">
+                <form id="kuis3">
+                  <label><input type="radio" name="q3" value="Osaka"> Osaka</label><br>
+                  <label><input type="radio" name="q3" value="Kyoto"> Kyoto</label><br>
+                  <label><input type="radio" name="q3" value="Tokyo"> Tokyo</label><br>
+                  <label><input type="radio" name="q3" value="Hiroshima"> Hiroshima</label>
+                </form>
+              
+                <li class="soal">Gunung tertinggi di Jepang adalah...
+                    <button class="toggle" onclick="toggleSoal(this)">Lihat Soal</button>
+                    <div class="pertanyaan">
+                <form id="kuis4">
+                  <label><input type="radio" name="q4" value="Fuji"> Gunung Fuji</label><br>
+                  <label><input type="radio" name="q4" value="Asama"> Gunung Asama</label><br>
+                  <label><input type="radio" name="q4" value="Unzen"> Gunung Unzen</label><br>
+                  <label><input type="radio" name="q4" value="Sakurajima"> Gunung Sakurajima</label>
+                </form>
+
+                <li class="soal">
+                    Bahasa resmi yang digunakan di Jepang adalah...
+                    <button class="toggle" onclick="toggleSoal(this)">Lihat Soal</button>
+                    <div class="pertanyaan">              
+                <form id="kuis5">
+                  <label><input type="radio" name="q5" value="Korea"> Korea</label><br>
+                  <label><input type="radio" name="q5" value="Mandarin"> Mandarin</label><br>
+                  <label><input type="radio" name="q5" value="Jepang"> Jepang</label><br>
+                  <label><input type="radio" name="q5" value="Thai"> Thai</label>
+                </form>
+              
+                <li class="soal">Animasi khas dari Jepang dikenal dengan sebutan...
+                    <button class="toggle" onclick="toggleSoal(this)">Lihat Soal</button>
+                    <div class="pertanyaan">              
+                <form id="kuis6">
+                  <label><input type="radio" name="q6" value="Anime"> Anime</label><br>
+                  <label><input type="radio" name="q6" value="Cartoon"> Cartoon</label><br>
+                  <label><input type="radio" name="q6" value="Manga"> Manga</label><br>
+                  <label><input type="radio" name="q6" value="Komik"> Komik</label>
+                </form>
+              
+                <li class="soal">Istana Kekaisaran Jepang berada di kota...
+                  <button class="toggle" onclick="toggleSoal(this)">Lihat Soal</button>
+                  <div class="pertanyaan"> 
+                <form id="kuis7">
+                  <label><input type="radio" name="q7" value="Tokyo"> Tokyo</label><br>
+                  <label><input type="radio" name="q7" value="Kyoto"> Kyoto</label><br>
+                  <label><input type="radio" name="q7" value="Osaka"> Osaka</label><br>
+                  <label><input type="radio" name="q7" value="Nara"> Nara</label>
+                </form>
+              
+                <li class="soal">Transportasi cepat yang terkenal di Jepang disebut...
+                  <button class="toggle" onclick="toggleSoal(this)">Lihat Soal</button>
+                  <div class="pertanyaan"> 
+                <form id="kuis8">
+                  <label><input type="radio" name="q8" value="Shinkansen"> Shinkansen</label><br>
+                  <label><input type="radio" name="q8" value="TGV"> TGV</label><br>
+                  <label><input type="radio" name="q8" value="Metro"> Metro</label><br>
+                  <label><input type="radio" name="q8" value="Monorail"> Monorail</label>
+                </form>
+              
+                <li class="soal">Bunga yang menjadi simbol negara Jepang adalah...
+                  <button class="toggle" onclick="toggleSoal(this)">Lihat Soal</button>
+                  <div class="pertanyaan"> 
+                <form id="kuis9">
+                  <label><input type="radio" name="q9" value="Mawar"> Mawar</label><br>
+                  <label><input type="radio" name="q9" value="Tulip"> Tulip</label><br>
+                  <label><input type="radio" name="q9" value="Sakura"> Sakura</label><br>
+                  <label><input type="radio" name="q9" value="Lili"> Lili</label>
+                </form>
+              
+                <li class="soal">Agama tradisional yang berasal dari Jepang adalah...
+                  <button class="toggle" onclick="toggleSoal(this)">Lihat Soal</button>
+                  <div class="pertanyaan"> 
+                <form id="kuis10">
+                  <label><input type="radio" name="q10" value="Buddha"> Buddha</label><br>
+                  <label><input type="radio" name="q10" value="Shinto"> Shinto</label><br>
+                  <label><input type="radio" name="q10" value="Hindu"> Hindu</label><br>
+                  <label><input type="radio" name="q10" value="Kristen"> Kristen</label>
+              </form>
+              </ol>
+              <button class="kirim" type="button" onclick="periksa()">Periksa Jawaban</button>
+              <button type="button" id="resetBtn" onclick="resetKuis()">Reset</button>
+
+              <p id="hasil"></p>
+
+
+              <script>
+                // Fungsi untuk tampil/sembunyikan soal
+                function toggleSoal(button) {
+                  const soalDiv = button.nextElementSibling;
+                  if (soalDiv.style.display === "none" || soalDiv.style.display === "") {
+                    soalDiv.style.display = "block";
+                    button.textContent = "Sembunyikan Soal";
+                  } else {
+                    soalDiv.style.display = "none";
+                    button.textContent = "Lihat Soal";
+                  }
+                }
+            
+                // Fungsi untuk tombol kirim
+                function periksa(){
+                  alert("Arigatou for Sending Your Answer!")
+                  const jawabanBenar={
+                  q1: "Kimono", q2: "Yen", q3: "Tokyo", q4: "Fuji", q5: "Jepang",
+                  q6: "Anime", q7: "Tokyo", q8: "Shinkansen", q9: "Sakura", q10: "Shinto"
+                  }
+                 let skor = 0;
+                 for (let i = 1; i <= 10; i++) {
+                 const jawaban = document.querySelector(`input[name=q${i}]:checked`);
+                 if (jawaban && jawaban.value === jawabanBenar[`q${i}`]) skor++;
+               }
+                 document.getElementById("hasil").innerText = 
+                 `Skor kamu: ${skor} dari 10 soal 🎉`;
+                }
+                function resetKuis() {
+                document.getElementById("kuis10").reset();
+                document.getElementById("kuis9").reset();
+                document.getElementById("kuis8").reset();
+                document.getElementById("kuis7").reset();
+                document.getElementById("kuis6").reset();
+                document.getElementById("kuis5").reset();
+                document.getElementById("kuis4").reset();
+                document.getElementById("kuis3").reset();
+                document.getElementById("kuis2").reset();
+                document.getElementById("kuis1").reset();
+                document.getElementById("hasil").innerText = "";
+                }
+              </script>            
+        </section>
+        <aside>
+          <h2>Tebak-tebakan lainya</h2>
+          <nav class="tebak">
+            <section class="tebak1"><a href="memocard.html">
+              <img src="assets/ular.png" alt="Memori card"></a>
+              <p style="color: white;">Memori Card</p>
+              </section> 
+          </nav>
+        </aside>
+    </nav>
+    <script src="script.js"></script>
+</body>
+</html>

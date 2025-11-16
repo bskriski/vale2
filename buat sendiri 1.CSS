@@ -1,0 +1,233 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family:'Comic Neue', cursive;
+  background: linear-gradient(to right, #e0f7fa, #e1bee7);
+  color: #333;
+  line-height: 1.6;
+}
+header {
+  background: linear-gradient(135deg, #3f51b5, #673ab7);
+  color: rgb(23, 7, 64);
+  padding: 10px;
+  text-align: center;
+  border-radius: 0px 0px 20px 20px;
+  animation: slideDown 1s ease;
+}
+@keyframes slideDown{
+    from{transform: translateY(-100%);opacity: 0;}
+    to{transform: translateY(0);opacity: 1;}
+}
+header h1 {
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+nav {
+  margin-top: 15px;
+}
+nav a {
+  text-decoration: none;
+  color: #ffeb3b;
+  margin: 0 3px;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s;
+}
+nav a:hover {
+  color: #ff9800;
+  transform: scale(1.1);
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+section, aside {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+section:hover, aside:hover {
+  transform: translateY(-5px);
+}
+h2 {
+  margin-bottom: 10px;
+  color: #3f51b5;
+}
+
+p { margin-bottom: 10px; }
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+img:hover {
+  transform: scale(1.05);
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s;
+}
+.btn:hover {
+  background: #283593;
+  transform: scale(1.05);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+th, td {
+  border: 1px solid #aaa;
+  padding: 10px;
+  text-align: center;
+}
+th {
+  background: #3f51b5;
+  color: white;
+}
+footer {
+  background: #212121;
+  color: #eee;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+footer p {
+  animation: fadeIn 2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media(max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+body.dark {
+  background: linear-gradient(to right, #212121, #424242);
+  color: #f5f5f5;
+}
+body.dark section,
+body.dark aside {
+  background: #333;
+  color: #eee;
+}
+body.dark table th {
+  background: #212121;
+}
+body.dark footer {
+  background: #000;
+  color: #bbb;
+}
+.dark-toggle {
+  margin-top: 15px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #ffeb3b;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.dark-toggle:hover {
+  transform: scale(1.05);
+}
+.anime {
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  gap: 15px;
+  padding: 15px;
+}
+.macam {
+  background: linear-gradient(135deg, #3f51b5, #673ab7);
+  color: rgb(23, 7, 64);
+  padding: 5px;
+  text-align: center;
+  border-radius: 0px 0px 20px 20px;
+  animation: slideDown 1s ease;
+}
+.anime2 {
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  gap: 15px;
+  padding: 15px;
+}
+h1{
+  text-align: center;
+
+}
+.tjkt{
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr;
+  gap: 15px;
+  padding: 15px;
+
+}
+   /* .tombol {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .tombol:hover {
+      background-color: #0056b3;
+    }
+    .teks-sembunyi {
+      display: none;
+      color: #333;
+      margin-top: 5px;
+    } */
+.bahasa{
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  gap: 20px;
+  padding: 20px;
+}
+.km{
+  display: grid;
+  grid-template-columns: 6fr;
+  gap: 20px;
+  padding: 20px;
+}
+.minigames{
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  gap: 10px;
+  padding: 10px;
+}
+.webn{
+  display: grid;
+  grid-template-columns: 6fr;
+  gap: 10px;
+  padding: 10px;
+}
+.tebak{
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  padding: 20px;
+  border-radius: 10px;
+}
+.tebak1{
+  background: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
